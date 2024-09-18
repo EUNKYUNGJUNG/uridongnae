@@ -1,0 +1,29 @@
+.carousel-container {
+  position: relative;
+}
+
+.custom-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-left-arrow {
+  left: 10px;
+}
+
+.custom-right-arrow {
+  right: 10px;
+}
+
+.carousel-container:hover .custom-arrow {
+  display: block !important;
+}
