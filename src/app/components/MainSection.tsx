@@ -1,4 +1,5 @@
 "use client";
+import useMediaQuery from "../hook/useMediaQuery";
 import MultiCarousel from "./MultiCarousel";
 import PostCard from "./PostCard";
 
@@ -48,6 +49,7 @@ const posts: Post[] = [
 ];
 
 export default function MainSection() {
+  const isMobile = useMediaQuery("(max-width: 768px)"); // 모바일 감지
   return (
     <div style={{ position: "relative" }}>
       <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
@@ -85,17 +87,18 @@ export default function MainSection() {
             fontWeight: "bold",
             textAlign: "center",
             zIndex: 1,
+            minWidth: 300,
           }}
         >
           <div
             style={{
-              fontSize: "6em",
+              fontSize: isMobile ? "3em" : "6em",
               background:
                 "linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.8))",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               opacity: 0.8,
-              marginBottom: -110,
+              marginBottom: isMobile ? -70 : -110,
               zIndex: 0,
               position: "relative",
             }}
@@ -107,14 +110,17 @@ export default function MainSection() {
               zIndex: 5,
               position: "relative",
               marginTop: "20px",
+              fontSize: isMobile ? "24px" : "32px",
             }}
           >
             {`언제나`}
             <span style={{ color: "#2F88FC" }}>{`우리동네`}</span>
             {`를 책임지는`}
           </div>
-          <div>{`감성 부동산`}</div>
-          <div>
+          <div
+            style={{ fontSize: isMobile ? "24px" : "32px" }}
+          >{`감성 부동산`}</div>
+          <div style={{ fontSize: isMobile ? "24px" : "32px" }}>
             <span style={{ color: "#2F88FC" }}>{`우리동네 부동산`}</span>
             {`입니다.`}
           </div>

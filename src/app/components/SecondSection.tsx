@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
+import useMediaQuery from "../hook/useMediaQuery";
 
 export default function SecondSection() {
+  const isMobile = useMediaQuery("(max-width: 768px)"); // 모바일 감지
   return (
     <div
       style={{
-        height: "100vh",
+        paddingTop: 50,
+        paddingBottom: 50,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -14,7 +17,8 @@ export default function SecondSection() {
     >
       <div
         style={{
-          display: "grid",
+          display: isMobile ? "flex" : "grid",
+          flexDirection: "column",
           gridTemplateColumns: "repeat(3, 1fr)",
           gridTemplateRows: "repeat(3, 1fr)",
           gap: "0",
@@ -57,9 +61,9 @@ export default function SecondSection() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            position: "relative", // Add this
-            width: "100%", // Ensure the parent div has a defined width
-            height: "100%", // Ensure the parent div has a defined height
+            position: "relative",
+            width: "100%",
+            height: "100%",
           }}
         >
           <Image

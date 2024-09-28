@@ -1,12 +1,16 @@
+"use client";
+import useMediaQuery from "../hook/useMediaQuery";
 import { Post } from "./CarouselPosts";
 import Image from "next/image";
 
 export default function Footer() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <div
       style={{
         display: "flex",
-        height: 160,
+        flexDirection: isMobile ? "column" : "row",
+        height: isMobile ? "100%" : 160,
         backgroundColor: "blue",
         justifyContent: "space-between",
         padding: 20,
@@ -19,19 +23,22 @@ export default function Footer() {
           flexDirection: "column",
           justifyContent: "flex-end",
           lineHeight: 1,
-          fontSize: 34,
+          fontSize: isMobile ? 24 : 34,
+          marginBottom: isMobile ? 10 : 0,
         }}
       >
         <span>URI_DONGNAE</span>
         <span>realestate</span>
       </div>
-      <div style={{ display: "flex" }}>
+      <div
+        style={{ display: "flex", flexDirection: isMobile ? "column" : "row" }}
+      >
         <div
           style={{
             display: "flex",
             alignItems: "flex-end",
             color: "white",
-            paddingLeft: 15,
+            paddingLeft: isMobile ? 0 : 15,
             width: 300,
             fontSize: 12,
           }}
@@ -44,7 +51,7 @@ export default function Footer() {
             justifyContent: "flex-end",
             flexDirection: "column",
             color: "white",
-            paddingLeft: 15,
+            paddingLeft: isMobile ? 0 : 15,
             width: 300,
             fontSize: 12,
           }}
@@ -59,7 +66,7 @@ export default function Footer() {
             justifyContent: "flex-end",
             flexDirection: "column",
             color: "white",
-            paddingLeft: 15,
+            paddingLeft: isMobile ? 0 : 15,
             width: 300,
             fontSize: 12,
           }}

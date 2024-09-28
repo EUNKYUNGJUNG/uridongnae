@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
+import useMediaQuery from "../hook/useMediaQuery";
 export default function ThirdSection() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <div>
       <div
         style={{
           display: "flex",
+          flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           justifyContent: "center",
           width: "100vw",
-          height: "70vh",
+          height: isMobile ? "" : "70vh",
           padding: "50px",
         }}
       >
@@ -20,8 +23,8 @@ export default function ThirdSection() {
             alignItems: "center",
             justifyContent: "center",
             position: "relative", // Add this
-            width: "50%", // Ensure the parent div has a defined width
-            height: "100%", // Ensure the parent div has a defined height
+            width: isMobile ? "100vw" : "50vw", // 모바일에서는 전체 너비를 사용
+            height: isMobile ? "40vh" : "100%", // 모바일에서는 적절한 높이 설정
           }}
         >
           <Image
@@ -32,12 +35,18 @@ export default function ThirdSection() {
           />
         </div>
 
-        <div style={{ marginLeft: 20, width: "30%" }}>
+        <div
+          style={{
+            marginLeft: isMobile ? 0 : 20,
+            width: isMobile ? "100%" : "30%",
+          }}
+        >
           <div
             style={{
               fontWeight: "bold",
               display: "flex",
               alignItems: "center",
+              marginTop: isMobile ? 20 : 0,
             }}
           >
             <span
@@ -52,11 +61,17 @@ export default function ThirdSection() {
             ></span>
             주소 안내
           </div>
-          <div style={{ fontWeight: 500, paddingLeft: 12 }}>
+          <div
+            style={{
+              fontWeight: 500,
+              paddingLeft: 12,
+              fontSize: isMobile ? 14 : 16,
+            }}
+          >
             힐스테이트송도더스카이 상가C동 2층 206호
           </div>
           <br />
-          <div style={{ paddingLeft: 12 }}>
+          <div style={{ paddingLeft: 12, fontSize: isMobile ? 14 : 16 }}>
             대중교통 이용 안내 : <br />
             인천1호선 국제업무지구역 3번출구 하차 후 호수변으로 이동 , 상가C동
             2층 위치  <br />
