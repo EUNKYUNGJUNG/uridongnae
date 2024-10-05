@@ -1,9 +1,12 @@
 "use client";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 import useMediaQuery from "../hook/useMediaQuery";
 
 export default function ChannelSection() {
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const imageLoader: ImageLoader = ({ src, width, quality }: any) => {
+    return `https://uridongnae.com/${src}?w=${width || 200}&q=${quality || 75}`;
+  };
   return (
     <div>
       <div
@@ -19,7 +22,26 @@ export default function ChannelSection() {
       >
         <button style={{ marginRight: isMobile ? 0 : 20 }}>
           <a
-            href="http://pf.kakao.com/_ZVxhyG"
+            // 추후 네이버 톡톡 하는 형식으로 전부 교체하기!
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              const start = Date.now();
+
+              if (isMobile) {
+                // 모바일일 때 네이버 앱을 열거나 실패 시 웹 페이지로 유도
+                window.location.href =
+                  "naversearchapp://inappbrowser?url=https://talk.naver.com/W5IJE3";
+                setTimeout(() => {
+                  if (Date.now() - start < 1500) {
+                    window.location.href = "https://talk.naver.com/W5IJE3"; // 모바일 웹 버전
+                  }
+                }, 1000);
+              } else {
+                // PC일 때는 바로 웹 페이지로 유도
+                window.location.href = "https://talk.naver.com/W5IJE3";
+              }
+            }}
             target="_blank"
             style={{
               display: "flex",
@@ -28,6 +50,44 @@ export default function ChannelSection() {
             }}
           >
             <Image
+              loader={imageLoader}
+              src="/images/sns_talk.png"
+              alt="네이버톡톡"
+              width={isMobile ? 35 : 50}
+              height={50} // 원하는 높이
+              style={{
+                borderRadius: "11px",
+                boxShadow: "0 4px 8px rgba(96, 96, 96, 0.5)",
+                backgroundColor: "transparent",
+              }}
+            />
+            <span
+              style={{
+                paddingLeft: isMobile ? 0 : 5,
+                width: 100,
+                fontSize: isMobile ? 14 : 16,
+              }}
+            >
+              네이버 톡톡
+            </span>
+          </a>
+        </button>
+        <button style={{ marginRight: isMobile ? 0 : 20 }}>
+          <a
+            href={
+              isMobile
+                ? "kakaoplus://plusfriend/friend/_ZVxhyG"
+                : "http://pf.kakao.com/_ZVxhyG"
+            }
+            target="_blank"
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              loader={imageLoader}
               src="/images/sns_ch.png"
               alt="카카오채널"
               width={isMobile ? 35 : 50}
@@ -51,7 +111,11 @@ export default function ChannelSection() {
         </button>
         <button style={{ marginRight: isMobile ? 0 : 20 }}>
           <a
-            href="https://blog.naver.com/abcabc_0620"
+            href={
+              isMobile
+                ? "instagram://user?username=uridongnae_sd" // 모바일 앱에서 열리도록 딥링크 설정
+                : "https://www.instagram.com/uridongnae_sd" // PC에서 열리도록 웹 링크 설정
+            }
             target="_blank"
             style={{
               display: "flex",
@@ -60,38 +124,7 @@ export default function ChannelSection() {
             }}
           >
             <Image
-              src="/images/sns_blog.png"
-              alt="네이버블로그"
-              width={isMobile ? 35 : 50}
-              height={50} // 원하는 높이
-              style={{
-                borderRadius: "11px",
-                boxShadow: "0 4px 8px rgba(96, 96, 96, 0.5)",
-                backgroundColor: "transparent",
-              }}
-            />
-            <span
-              style={{
-                paddingLeft: isMobile ? 0 : 5,
-                width: 100,
-                fontSize: isMobile ? 14 : 16,
-              }}
-            >
-              네이버 블로그
-            </span>
-          </a>
-        </button>
-        <button style={{ marginRight: isMobile ? 0 : 20 }}>
-          <a
-            href="https://www.instagram.com/uridongnae_sd?igsh=MXMyNTFiM3pnenc4aw=="
-            target="_blank"
-            style={{
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              alignItems: "center",
-            }}
-          >
-            <Image
+              loader={imageLoader}
               src="/images/sns_ins.png"
               alt="인스타그램"
               width={isMobile ? 35 : 50}
@@ -115,7 +148,11 @@ export default function ChannelSection() {
         </button>
         <button style={{ marginRight: isMobile ? 0 : 20 }}>
           <a
-            href="https://talk.naver.com/W5IJE3"
+            href={
+              isMobile
+                ? "naverblog://blog.naver.com/abcabc_0620"
+                : "https://blog.naver.com/abcabc_0620"
+            }
             target="_blank"
             style={{
               display: "flex",
@@ -124,8 +161,9 @@ export default function ChannelSection() {
             }}
           >
             <Image
-              src="/images/sns_talk.png"
-              alt="네이버톡톡"
+              loader={imageLoader}
+              src="/images/sns_blog.png"
+              alt="네이버블로그"
               width={isMobile ? 35 : 50}
               height={50} // 원하는 높이
               style={{
@@ -141,7 +179,7 @@ export default function ChannelSection() {
                 fontSize: isMobile ? 14 : 16,
               }}
             >
-              네이버 톡톡
+              네이버 블로그
             </span>
           </a>
         </button>

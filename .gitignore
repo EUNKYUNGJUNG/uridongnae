@@ -1,2 +1,4 @@
-node_modules
-.next
+# .gitignore 예시
+node_modules/
+.next/
+*.log

@@ -1,8 +1,11 @@
 "use client";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 import useMediaQuery from "../hook/useMediaQuery";
 export default function ThirdSection() {
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const imageLoader: ImageLoader = ({ src, width, quality }: any) => {
+    return `https://uridongnae.com/${src}?w=${width || 200}&q=${quality || 75}`;
+  };
   return (
     <div>
       <div
@@ -28,7 +31,8 @@ export default function ThirdSection() {
           }}
         >
           <Image
-            src="/images/map_uridongnae.png"
+            loader={imageLoader}
+            src="/images/map.png"
             alt="Image 9"
             layout="fill"
             objectFit="cover"
@@ -54,28 +58,52 @@ export default function ThirdSection() {
                 display: "inline-block",
                 width: 6,
                 height: "20px",
-                backgroundColor: "#2F88FC;",
+                backgroundColor: "#2F88FC",
                 borderRadius: "3px",
                 marginRight: 6,
               }}
             ></span>
             주소 안내
           </div>
+
           <div
             style={{
-              fontWeight: 500,
+              display: "flex",
+              fontWeight: 700,
               paddingLeft: 12,
               fontSize: isMobile ? 14 : 16,
             }}
           >
             힐스테이트송도더스카이 상가C동 2층 206호
           </div>
+
           <br />
           <div style={{ paddingLeft: 12, fontSize: isMobile ? 14 : 16 }}>
-            대중교통 이용 안내 : <br />
+            <div style={{ display: "flex" }}>
+              <Image
+                loader={imageLoader}
+                src="/images/map_public_transport.png"
+                alt="map_office_building"
+                style={{ marginRight: 5 }}
+                width={20}
+                height={20}
+              />
+              대중교통 이용 안내 :
+            </div>
             인천1호선 국제업무지구역 3번출구 하차 후 호수변으로 이동 , 상가C동
             2층 위치  <br />
-            차량 이용 안내 : <br />
+            <br />
+            <div style={{ display: "flex" }}>
+              <Image
+                loader={imageLoader}
+                src="/images/map_car.png"
+                alt="map_car"
+                style={{ marginRight: 5 }}
+                width={20}
+                height={20}
+              />
+              차량 이용 안내 :
+            </div>
             3번 게이트로 진입하시어 좌측 , 좌측 진입 하여 C동 ( 104동 )  주변
             주차
             <div

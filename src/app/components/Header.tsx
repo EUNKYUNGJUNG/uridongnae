@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 import useMediaQuery from "../hook/useMediaQuery";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
   const isMobile = useMediaQuery("(max-width: 768px)"); // 모바일 감지
-
+  const imageLoader: ImageLoader = ({ src, width, quality }: any) => {
+    return `https://uridongnae.com/${src}?w=${width || 200}&q=${quality || 75}`;
+  };
   const handleUrl = () => {
     router.push("/call");
   };
@@ -62,14 +64,27 @@ export default function Header() {
           color: isScrolled ? "black" : "white",
         }}
       >
-        <Image
-          src="/images/call.png"
-          alt="인스타그램"
-          width={isMobile ? 30 : 50} // 원하는 너비
-          height={isMobile ? 30 : 50} // 원하는 높이
-          style={{ marginRight: 10 }}
-        />
-        1833-9883
+        <a
+          href="tel:1833-9883"
+          style={{
+            fontSize: isMobile ? 18 : 24, // 모바일일 경우 글씨 크기 조정
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: isScrolled ? "black" : "white",
+            textDecoration: "none", // 링크의 밑줄 제거
+          }}
+        >
+          <Image
+            loader={imageLoader}
+            src="/images/call.png"
+            alt="images_call"
+            width={isMobile ? 30 : 50} // 원하는 너비
+            height={isMobile ? 30 : 50} // 원하는 높이
+            style={{ marginRight: 10 }}
+          />
+          1833-9883
+        </a>
       </div>
     </div>
   );

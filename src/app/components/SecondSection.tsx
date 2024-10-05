@@ -1,9 +1,12 @@
 "use client";
-import Image from "next/image";
+import Image, { ImageLoader } from "next/image";
 import useMediaQuery from "../hook/useMediaQuery";
 
 export default function SecondSection() {
   const isMobile = useMediaQuery("(max-width: 768px)"); // 모바일 감지
+  const imageLoader: ImageLoader = ({ src, width, quality }: any) => {
+    return `https://uridongnae.com/${src}?w=${width || 200}&q=${quality || 75}`;
+  };
   return (
     <div
       style={{
@@ -67,8 +70,9 @@ export default function SecondSection() {
           }}
         >
           <Image
+            loader={imageLoader}
             src="/images/carousel_logo.png"
-            alt="Image 9"
+            alt="image_carousel_logo"
             layout="fill"
             objectFit="cover"
           />
@@ -113,8 +117,9 @@ export default function SecondSection() {
           }}
         >
           <Image
+            loader={imageLoader}
             src="/images/office_full.png"
-            alt="Image 9"
+            alt="image_office_full"
             layout="fill"
             objectFit="cover"
           />
@@ -159,8 +164,9 @@ export default function SecondSection() {
           }}
         >
           <Image
+            loader={imageLoader}
             src="/images/license.png"
-            alt="Image 9"
+            alt="image_license"
             layout="fill"
             objectFit="cover"
           />
@@ -179,8 +185,9 @@ export default function SecondSection() {
           }}
         >
           <Image
+            loader={imageLoader}
             src="/images/table.png"
-            alt="Image 9"
+            alt="image_table"
             layout="fill"
             objectFit="cover"
           />
@@ -197,8 +204,9 @@ export default function SecondSection() {
           }}
         >
           <Image
+            loader={imageLoader}
             src="/images/sofa.png"
-            alt="Image 9"
+            alt="image_sofa"
             layout="fill"
             objectFit="cover"
           />
