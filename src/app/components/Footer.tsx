@@ -10,10 +10,10 @@ export default function Footer() {
       style={{
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
-        height: isMobile ? "100%" : 160,
-        backgroundColor: "blue",
+        height: isMobile ? "100%" : 151,
+        backgroundColor: "#347EBD",
         justifyContent: "space-between",
-        padding: 20,
+        padding: 10,
       }}
     >
       <div
@@ -23,7 +23,7 @@ export default function Footer() {
           flexDirection: "column",
           justifyContent: "flex-end",
           lineHeight: 1,
-          fontSize: isMobile ? 24 : 34,
+          fontSize: isMobile ? 24 : 30,
           marginBottom: isMobile ? 10 : 0,
         }}
       >

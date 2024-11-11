@@ -51,7 +51,7 @@ export default function Header() {
           transition: "color 0.3s ease",
         }}
       >
-        우리동네 부동산
+        우리동네부동산
       </div>
 
       {/* Button Text */}

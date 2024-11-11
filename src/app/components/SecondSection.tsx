@@ -41,7 +41,9 @@ export default function SecondSection() {
           }}
         >
           <div style={{ fontSize: 20, paddingBottom: 5, fontWeight: "bold" }}>
-            부동산 공간을 구하고 내놓는 모든 사람들의 처한 상황은 다릅니다.
+            부동산 공간을
+            <br /> 구하고 내놓는 모든 사람들의
+            <br /> 처한 상황은 다릅니다.
           </div>
           <div
             style={{
@@ -118,7 +120,7 @@ export default function SecondSection() {
         >
           <Image
             loader={imageLoader}
-            src="/images/office_full.png"
+            src="/images/IMG_1843.jpg"
             alt="image_office_full"
             layout="fill"
             objectFit="cover"
@@ -165,7 +167,7 @@ export default function SecondSection() {
         >
           <Image
             loader={imageLoader}
-            src="/images/license.png"
+            src="/images/IMG_1854.jpg"
             alt="image_license"
             layout="fill"
             objectFit="cover"
@@ -186,7 +188,7 @@ export default function SecondSection() {
         >
           <Image
             loader={imageLoader}
-            src="/images/table.png"
+            src="/images/IMG_1841.jpg"
             alt="image_table"
             layout="fill"
             objectFit="cover"
@@ -205,7 +207,7 @@ export default function SecondSection() {
         >
           <Image
             loader={imageLoader}
-            src="/images/sofa.png"
+            src="/images/IMG_1850.jpg"
             alt="image_sofa"
             layout="fill"
             objectFit="cover"
@@ -250,7 +252,8 @@ export default function SecondSection() {
           }}
         >
           <div style={{ fontSize: 20, paddingBottom: 5, fontWeight: "bold" }}>
-            지금까지 부동산중개사무소 공간은 어떠셨나요?
+            지금까지 부동산중개사무소
+            <br /> 공간은 어떠셨나요?
           </div>
           <div
             style={{

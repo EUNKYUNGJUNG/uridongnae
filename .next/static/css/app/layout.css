@@ -564,6 +564,9 @@ video {
 [hidden] {
   display: none;
 }
+.visible {
+  visibility: visible;
+}
 .fixed {
   position: fixed;
 }

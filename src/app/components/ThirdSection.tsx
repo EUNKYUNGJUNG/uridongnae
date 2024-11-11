@@ -116,7 +116,7 @@ export default function ThirdSection() {
               }}
             >
               <a
-                href="https://map.naver.com/p/search/%EC%9A%B0%EB%A6%AC%EB%8F%99%EB%84%A4%EB%B6%80%EB%8F%99%EC%82%B0%20%EC%86%A1%EB%8F%84/place/1399549672?c=15.00,0,0,0,dh&placePath=%3Fentry%253Dpll"
+                href="https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%9D%B8%EC%B2%9C%ED%83%80%EC%9B%8C%EB%8C%80%EB%A1%9C%20365%20C%EB%8F%99%202%EC%B8%B5%20206%ED%98%B8/address/14096194.5253012,4495297.2670303,%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%9D%B8%EC%B2%9C%ED%83%80%EC%9B%8C%EB%8C%80%EB%A1%9C%20365,new?c=15.00,0,0,0,dh&isCorrectAnswer=true"
                 target="_blank"
                 style={{
                   backgroundColor: "#093876",
@@ -134,7 +134,7 @@ export default function ThirdSection() {
                 자세히 보기
               </a>
               <a
-                href="https://map.naver.com/p/directions/14094867.1628249,4492915.0208026,%EC%9A%B0%EB%A6%AC%EB%8F%99%EB%84%A4%EB%B6%80%EB%8F%99%EC%82%B0%EA%B3%B5%EC%9D%B8%EC%A4%91%EA%B0%9C%EC%82%AC%EC%82%AC%EB%AC%B4%EC%86%8C,1399549672,PLACE_POI/-/-/transit?c=14.00,0,0,0,dh"
+                href="https://map.naver.com/p/directions/-/14096194.5253012,4495297.2670303,%EC%9D%B8%EC%B2%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%9D%B8%EC%B2%9C%ED%83%80%EC%9B%8C%EB%8C%80%EB%A1%9C%20365,,ADDRESS_POI/-/transit?c=15.00,0,0,0,dh"
                 target="_blank"
                 style={{
                   border: "2px solid #093876",

@@ -115,13 +115,20 @@ export default function MainSection() {
           >
             {`언제나`}
             <span style={{ color: "#2F88FC" }}>{`우리동네`}</span>
-            {`를 책임지는`}
+            {`를 책임지는,`}
+          </div>
+          <div style={{ fontSize: isMobile ? "24px" : "32px" }}>
+            <span style={{ color: "#2F88FC" }}>{`AtoZ`}</span>
+            {`까지 모든 것을`}
           </div>
           <div
             style={{ fontSize: isMobile ? "24px" : "32px" }}
-          >{`감성 부동산`}</div>
+          >{`다 알아서 알려주고 다 해주는`}</div>
+          <div
+            style={{ fontSize: isMobile ? "24px" : "32px" }}
+          >{`부동산전문가`}</div>
           <div style={{ fontSize: isMobile ? "24px" : "32px" }}>
-            <span style={{ color: "#2F88FC" }}>{`우리동네 부동산`}</span>
+            <span style={{ color: "#2F88FC" }}>{`우리동네부동산`}</span>
             {`입니다.`}
           </div>
         </div>
