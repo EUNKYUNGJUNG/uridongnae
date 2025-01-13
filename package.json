@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@channel.io/channel-web-sdk-loader": "^2.0.0",
+    "firebase": "^11.1.0",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",
-    "react-multi-carousel": "^2.8.5"
+    "react-multi-carousel": "^2.8.5",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",
