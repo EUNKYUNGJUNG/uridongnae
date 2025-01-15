@@ -211,9 +211,19 @@ export default function ThirdSection(props: Props) {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
     >
-      <div style={{ paddingTop: 20, fontSize: isMobile ? 18 : 30 }}>
+      <div
+        style={{
+          paddingTop: 20,
+          marginBottom: isMobile ? 20 : 0,
+          fontSize: isMobile ? 16 : 30,
+        }}
+      >
         📋 상담 및 매물 접수 신청하기 ( 이벤트 포함 )
       </div>
       <form onSubmit={handleSubmit}>
@@ -230,12 +240,20 @@ export default function ThirdSection(props: Props) {
           <div
             style={{
               display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               flexDirection: isMobile ? "column" : "row",
               marginBottom: 30,
             }}
           >
             {/* 왼쪽 */}
-            <div style={{ width: isMobile ? "100%" : "50%", marginRight: 10 }}>
+            <div
+              style={{
+                width: isMobile ? "90%" : "50%",
+                marginRight: isMobile ? 0 : 10,
+                marginBottom: isMobile ? 20 : 0,
+              }}
+            >
               <div
                 style={{
                   display: "flex",
@@ -244,7 +262,14 @@ export default function ThirdSection(props: Props) {
                   alignItems: "center",
                 }}
               >
-                <div style={{ width: 130 }}>성함</div>
+                <div
+                  style={{
+                    width: 150,
+                    fontSize: isMobile ? 14 : 16,
+                  }}
+                >
+                  성함
+                </div>
                 <input
                   style={{
                     backgroundColor: "white",
@@ -252,6 +277,7 @@ export default function ThirdSection(props: Props) {
                     borderRadius: 4,
                     borderBottomColor: "gray",
                     borderBottomWidth: 1,
+                    fontSize: isMobile ? 14 : 16,
                   }}
                   type="text"
                   name="userName"
@@ -269,7 +295,9 @@ export default function ThirdSection(props: Props) {
                   alignItems: "center",
                 }}
               >
-                <div style={{ width: 130 }}>소유하신 아파트명</div>
+                <div style={{ width: 150, fontSize: isMobile ? 12 : 16 }}>
+                  소유하신 아파트명
+                </div>
                 <input
                   style={{
                     backgroundColor: "white",
@@ -277,6 +305,7 @@ export default function ThirdSection(props: Props) {
                     borderRadius: 4,
                     borderBottomColor: "gray",
                     borderBottomWidth: 1,
+                    fontSize: isMobile ? 14 : 16,
                   }}
                   type="text"
                   name="atpName"
@@ -294,7 +323,9 @@ export default function ThirdSection(props: Props) {
                   alignItems: "center",
                 }}
               >
-                <div style={{ width: 130 }}>동 호수</div>
+                <div style={{ width: 150, fontSize: isMobile ? 14 : 16 }}>
+                  동 호수
+                </div>
                 <input
                   style={{
                     backgroundColor: "white",
@@ -302,6 +333,7 @@ export default function ThirdSection(props: Props) {
                     borderRadius: 4,
                     borderBottomColor: "gray",
                     borderBottomWidth: 1,
+                    fontSize: isMobile ? 14 : 16,
                   }}
                   type="text"
                   name="dongHo"
@@ -319,7 +351,9 @@ export default function ThirdSection(props: Props) {
                   alignItems: "center",
                 }}
               >
-                <div style={{ width: 130 }}>연락처</div>
+                <div style={{ width: 150, fontSize: isMobile ? 14 : 16 }}>
+                  연락처
+                </div>
                 <input
                   style={{
                     backgroundColor: "white",
@@ -327,6 +361,7 @@ export default function ThirdSection(props: Props) {
                     borderRadius: 4,
                     borderBottomColor: "gray",
                     borderBottomWidth: 1,
+                    fontSize: isMobile ? 14 : 16,
                   }}
                   type="text"
                   name="contactNumber"
@@ -338,7 +373,13 @@ export default function ThirdSection(props: Props) {
               </div>
             </div>
             {/* 오른쪽 */}
-            <div style={{ width: "50%" }}>
+            <div
+              style={{
+                width: "100%",
+                paddingLeft: isMobile ? 20 : 0,
+                paddingRight: isMobile ? 20 : 0,
+              }}
+            >
               <div
                 style={{
                   display: "flex",
@@ -346,62 +387,125 @@ export default function ThirdSection(props: Props) {
                   marginBottom: 8,
                 }}
               >
-                <div style={{ width: 180 }}>개인정보취급방침동의</div>
+                <div style={{ fontSize: isMobile ? 14 : 16 }}>
+                  개인정보취급방침동의
+                </div>
                 <div
                   style={{
                     height: 190,
-                    width: "300px",
+                    width: isMobile ? "100%" : "300px",
+
                     overflowY: "auto",
                     fontSize: 9,
                   }}
                 >
-                  * 개인정보 수집 및 이용동의 [개인정보보호를 위한 이용자
-                  동의사항] 자세한 내용은 아래의 ‘관심고객등록에 대한
-                  개인정보취급방침’ 을 확인하시기 바랍니다.  *고객등록에 대한
-                  개인정보 취급방침* 우리동네부동산(이하’운영주체’) 은 매물접수
-                  및 상담 , 고객 직접 참여 이벤트 등을 위해 아래와 같은
-                  개인정보를 수집 및 이용하고 있으며 , 아래의 목적 이외의
-                  용도로는 이용하지 않습니다. 운영주체는 고객님의 개인정보를
-                  중요취급하고 개인정보 보호법 및 정보통신망 이용촉진 및
-                  정보보호 등에 관한 법률을 준수하고 있습니다.   1.개인정보 수집
-                  및 이용에 동의  (1) 수집하는 개인정보 항목 -수집항목 : 이름 ,
-                  생년월일 , 휴대전화번호 , 소유 부동산정보 , 서비스 이용기록 ,
-                  접속 로그 , 쿠키, 접속 IP 정보 등의 전부 또는 일부 -개인정보
-                  수집방법 : 홈페이지 , 관심고객 등록 , 이벤트 응모 . 상담신청 .
-                  매물접수  (2)개인정보의 수집 및 이용 목적  수집한 개인정보를
-                  다음의 목적으로 이용합니다. -신청 및 접수한 부동산에 대한 정보
-                  및 마케팅 자료,통계에 활용 -마케팅 및 광고에 활용 , 신규
-                  서비스 개발 및 특화 , 이벤트 등 광고성 정보 전달 ,
-                  고객사전추천(MGM) , 인구통계학적 특성에 따른 서비스 제공 및
-                  광고 게재, 접속 빈도 파악 또는 회원 서비스 이용에 대한 통계 및
-                  정보 안내 , 아파트 확인 및 DM,TM 등  (3)개인정보의 보유 및
-                  이용기간 개인정보 수집 및 이용목적이 달성된 후 ( 마감, 이벤트
-                  수령 등) 해당 정보를 파기합니다. 다만, 아래의 경우에는 예외로
-                  합니다.  -고객이 사전에 요청한 경우 -법령의 규정에 의거하거나
-                  , 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의
-                  요구가 있는 경우   (4)거부할 권리 고객은 정보 수집 및 이용에
-                  대한 동의를 거부할 권리가 있습니다. 다만, 동의해야만 등록할 수
-                  있으며 , 거부시 이용에 제한이 있을 수 있습니다.  2.개인정보의
-                  제3자 제공에 대한 동의  (1)수집한 개인정보의 제3자의 제공
-                   고객에게 보다 질 높은 서비스를 제공하기 위해 아래와 같이
-                  귀하의 개인정보를 타 중개업소에 제공할 수 있습니다.   (2)
-                  제공하는 개인정보 항목 : 이름 , 생년월일 , 휴대전화번호 ,
-                  소유한 부동산 정보 . 서비스 이용기록 , 접속 로그 , 쿠키, 접속
-                  IP 정보 등의 전부 또는 일부  (3) 제공 정보의 이용 목적 :
-                  콘텐츠 제공 , 불만처리 등 민원처리 , 고지사항 전달, 이벤트 등
-                  광고성 정보 전달 , DM , TM 등의 확인   (4) 제공 정보의 보유 및
-                  이용 기간 개인정보 수집 및 이용 목적이 달성된 후 ( 마감,
-                  이벤트 수령 등 ) 해당 정보를 파기합니다. 다만 , 아래의
-                  경우에는 예외로 합니다.   -고객이 사전에 요청한 경우  -법령의
-                  규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에
-                  따라 수사기관의 요구가 있는 경우   (5) 거부할 권리 고객은
-                  개인정보 3자 제공에 대한 동의를 거부할 권리가 있습니다. 다만
-                  동의해야만 등록할 수 있으며 , 거부시 이용에 제한이 있을 수
-                  있습니다.  *당사 운영하는 이벤트 및 관심고객 등록
-                  유의사항 -홈페이지에 등록한 정보가 계약 시 인적사항과 다를
-                  경우 증정 불가 -등록한 개인정보는 마감 및 이벤트 증정 등의
-                  업무 종료 후 즉시 파기함  이벤트 관련 이메일 문의 :
-                  uri_dongnae@naver.com
+                  * 개인정보 수집 및 이용동의
+                  <br />
+                  [개인정보보호를 위한 이용자 동의사항]
+                  <br />
+                  자세한 내용은 아래의 ‘관심고객등록에 대한 개인정보취급방침’ 을
+                  확인하시기 바랍니다.
+                  <br />
+                  <br />
+                  *고객등록에 대한 개인정보 취급방침*
+                  <br />
+                  우리동네부동산(이하’운영주체’) 은 매물접수 및 상담 , 고객 직접
+                  참여 이벤트 등을 위해 아래와 같은 개인정보를 수집 및 이용하고
+                  있으며 , 아래의 목적 이외의 용도로는 이용하지 않습니다.
+                  운영주체는 고객님의 개인정보를 중요취급하고 개인정보 보호법 및
+                  정보통신망 이용촉진 및 정보보호 등에 관한 법률을 준수하고
+                  있습니다.
+                  <br />
+                  <br />
+                  1.개인정보 수집 및 이용에 동의
+                  <br />
+                  <br />
+                  (1) 수집하는 개인정보 항목
+                  <br />
+                  -수집항목 : 이름 , 생년월일 , 휴대전화번호 , 소유 부동산정보 ,
+                  서비스 이용기록 , 접속 로그 , 쿠키, 접속 IP 정보 등의 전부
+                  또는 일부
+                  <br />
+                  -개인정보 수집방법 : 홈페이지 , 관심고객 등록 , 이벤트 응모 .
+                  상담신청 . 매물접수
+                  <br />
+                  <br />
+                  (2)개인정보의 수집 및 이용 목적  수집한 개인정보를 다음의
+                  목적으로 이용합니다.
+                  <br />
+                  -신청 및 접수한 부동산에 대한 정보 및 마케팅 자료,통계에 활용
+                  <br />
+                  -마케팅 및 광고에 활용 , 신규 서비스 개발 및 특화 , 이벤트 등
+                  광고성 정보 전달 , 고객사전추천(MGM) , 인구통계학적 특성에
+                  따른 서비스 제공 및 광고 게재, 접속 빈도 파악 또는 회원 서비스
+                  이용에 대한 통계 및 정보 안내 , 아파트 확인 및 DM,TM 등<br />
+                  <br />
+                  (3)개인정보의 보유 및 이용기간
+                  <br />
+                  개인정보 수집 및 이용목적이 달성된 후 ( 마감, 이벤트 수령 등)
+                  해당 정보를 파기합니다. <br />
+                  다만, 아래의 경우에는예외로 합니다.
+                  <br />
+                  -고객이사전에 요청한 경우
+                  <br />
+                  -법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와
+                  방법에 따라 수사기관의 요구가 있는 경우
+                  <br />
+                  <br />
+                  (4)거부할권리
+                  <br />
+                  고객은 정보 수집 및 이용에 대한 동의를 거부할 권리가 있습니다.
+                  다만, 동의해야만 등록할 수 있으며 , 거부시 이용에 제한이 있을
+                  수 있습니다.
+                  <br />
+                  <br />
+                  2.개인정보의 제3자 제공에 대한 동의
+                  <br />
+                  <br />
+                  (1)수집한 개인정보의 제3자의 제공
+                  <br />
+                  고객에게 보다 질 높은 서비스를 제공하기 위해 아래와 같이
+                  귀하의 개인정보를 타 중개업소에 제공할 수 있습니다.
+                  <br />
+                  <br />
+                  (2) 제공하는 개인정보 항목 : 이름 , 생년월일 , 휴대전화번호 ,
+                  소유한 부동산 정보 . 서비스 이용기록 , 접속 로그 , 쿠키,
+                  접속IP정보 등의 전부또는 일부
+                  <br />
+                  <br />
+                  (3) 제공 정보의 이용 목적 : 콘텐츠 제공 , 불만처리 등 민원처리
+                  , 고지사항 전달, 이벤트 등 광고성 정보 전달 , DM , TM 등의
+                  확인
+                  <br />
+                  <br />
+                  (4) 제공 정보의 보유 및 이용 기간
+                  <br />
+                  개인정보 수집 및 이용 목적이 달성된 후 ( 마감, 이벤트 수령 등
+                  ) 해당 정보를 파기합니다. 다만 , 아래의 경우에는 예외로합니다.
+                  <br />
+                   -고객이 사전에 요청한 경우
+                  <br />
+                   -법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와
+                  방법에 따라 수사기관의 요구가 있는 경우
+                  <br />
+                  <br />
+                  (5) 거부할 권리
+                  <br />
+                  고객은 개인정보 3자 제공에 대한 동의를 거부할 권리가 있습니다.
+                  다만 동의해야만 등록할 수 있으며 , 거부시 이용에 제한이 있을수
+                  있습니다.
+                  <br />
+                  <br />
+                  *당사 운영하는 이벤트 및 관심고객 등록 유의사항
+                  <br />
+                  -홈페이지에 등록한 정보가 계약 시 인적사항과 다를 경우 증정
+                  불가
+                  <br />
+                  -등록한 개인정보는 마감 및 이벤트 증정 등의 업무 종료 후 즉시
+                  파기함
+                  <br />
+                  <br />
+                  이벤트 관련 이메일 문의 : uri_dongnae@naver.com
                 </div>
                 <button
                   style={{
@@ -411,6 +515,7 @@ export default function ThirdSection(props: Props) {
                     backgroundColor: "#f0f0f0",
                     paddingTop: 5,
                     paddingBottom: 5,
+                    width: isMobile ? "100%" : "300px",
                   }}
                 >
                   <label
@@ -444,6 +549,7 @@ export default function ThirdSection(props: Props) {
               borderRadius: 8,
               width: 230,
               color: "#fff",
+              marginBottom: isMobile ? 20 : 0,
             }}
           >
             신청하기

@@ -7,7 +7,7 @@ import CarouselPosts from "../components/CarouselPosts";
 import Footer from "../components/Footer";
 import ThirdSection from "../components/ThirdSection";
 import ChannelSection from "../components/ChannelSection";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ChannelTalk from "./hook/ChannelTalk";
 import TalkLayout from "../components/TalkLayout";
 import useDisableBodyScroll from "@/components/ControlScroll";
@@ -49,17 +49,30 @@ export default function Home() {
 
   useDisableBodyScroll(isModalOpen);
 
+  const thirdSectionRef = useRef<HTMLDivElement>(null);
+  const scrollToThirdSection = () => {
+    if (thirdSectionRef.current) {
+      const offsetTop = thirdSectionRef.current.offsetTop;
+      window.scrollTo({
+        top: offsetTop - 80, // Header 높이만큼 보정
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div>
       <Header />
-      <MainSection />
+      <MainSection scrollToThirdSection={scrollToThirdSection} />
       <SecondSection />
-      <ThirdSection
-        isModalOpen={isModalOpen}
-        isChecked={isChecked}
-        closeModal={closeModal}
-        handleCheckboxChange={handleCheckboxChange}
-      />
+      <div ref={thirdSectionRef}>
+        <ThirdSection
+          isModalOpen={isModalOpen}
+          isChecked={isChecked}
+          closeModal={closeModal}
+          handleCheckboxChange={handleCheckboxChange}
+        />
+      </div>
       {/* <ChannelSection /> */}
       {/* <TalkLayout /> */}
       <Footer />

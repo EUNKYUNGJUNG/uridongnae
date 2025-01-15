@@ -1,6 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/call/page": "app/call/page.js",
   "/page": "app/page.js"
 }

@@ -161,7 +161,7 @@ import MultiCarousel from "./MultiCarousel";
 import Image, { ImageLoader } from "next/image";
 import "../app/styles/text.css";
 
-export default function MainSection() {
+export default function MainSection({ scrollToThirdSection }: any) {
   const isMobile = useMediaQuery("(max-width: 768px)"); // 모바일 감지
   return (
     <div style={{ position: "relative" }}>
@@ -202,13 +202,13 @@ export default function MainSection() {
             >
               <div
                 style={{
-                  fontSize: isMobile ? "1em" : "2em",
+                  fontSize: isMobile ? "1em" : "1.8em",
                   background:
                     "linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.8))",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   opacity: 1,
-                  marginBottom: isMobile ? -90 : -110,
+                  marginBottom: isMobile ? -90 : -105,
                   zIndex: 5,
                   position: "relative",
                 }}
@@ -228,7 +228,7 @@ export default function MainSection() {
                   zIndex: 5,
                   position: "relative",
                   marginTop: "75px",
-                  fontSize: isMobile ? "18px" : "32px",
+                  fontSize: isMobile ? "18px" : "30px",
                   color: "#c3c3c3",
                 }}
               >
@@ -245,7 +245,7 @@ export default function MainSection() {
               <div
                 style={{
                   color: "#636363",
-                  fontSize: isMobile ? "18px" : "32px",
+                  fontSize: isMobile ? "18px" : "30px",
                 }}
               >
                 <span style={{ color: "#2F88FC" }}>{`'우리동네부동산'`}</span>
@@ -303,7 +303,7 @@ export default function MainSection() {
               zIndex: 11,
               bottom: 20,
               color: "white",
-              top: "90%",
+              top: "85%",
               left: "50%",
               transform: "translate(-50%, -50%)",
             }}
@@ -319,31 +319,28 @@ export default function MainSection() {
               }}
             >
               {isMobile ? (
-                <>{`🎉 선착순중!`}</>
+                <>{`🎉 선착순 30명 이벤트 진행중!`}</>
               ) : (
                 <div
                   style={{
                     display: "flex",
+                    flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
                   {`🎉 럭스 소유주분들을 위한 선착순 30명 이벤트 진행 중!`}
                   <br />
-                  {"이벤트 내용은 신청 후 카톡 & 문자로 전송됩니다."}
+                  <span style={{ fontSize: 14 }}>
+                    {"이벤트 내용은 신청 후 카톡 & 문자로 전송됩니다."}
+                  </span>
                 </div>
               )}
             </div>
             <div>
               {/* {"상담 신청하기 이벤트 내용을 카카오톡 및 문자로 알려드려요!"} */}
               <button
-                onClick={() => {
-                  // 화면 맨 아래로 이동
-                  window.scrollTo({
-                    top: document.body.scrollHeight, // 문서의 전체 높이
-                    behavior: "smooth", // 부드럽게 스크롤
-                  });
-                }}
+                onClick={scrollToThirdSection}
                 style={{
                   backgroundColor: "#2F88FC",
                   padding: "14px 18px",

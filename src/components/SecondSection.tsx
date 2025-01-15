@@ -296,10 +296,11 @@ export default function SecondSection() {
       <div
         style={{
           flexDirection: "column",
-          width: "60%", // Adjust the width as needed
-          height: isMobile ? "1100px" : "65vh", // Adjust the height as needed
+          // width: "60%", // Adjust the width as needed
+          height: isMobile ? "1170px" : "65vh", // Adjust the height as needed
         }}
       >
+        {/* <div style={{ display: "flex", flexDirection: "row" }}> */}
         <div
           style={{
             paddingTop: isMobile ? 0 : 20,
@@ -307,8 +308,52 @@ export default function SecondSection() {
             fontSize: isMobile ? 18 : 30,
           }}
         >
-          🔥 럭스 및 주변 APT 시세확인
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: isMobile ? "column" : "row",
+            }}
+          >
+            🔥 럭스 및 주변 APT 시세확인
+            {isMobile ? (
+              <div
+                style={{
+                  marginLeft: 10,
+                  fontSize: 12,
+                  color: "gray",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                추가 타입들의 시세는 상담을 통해 더 자세히 안내드리겠습니다.
+              </div>
+            ) : null}
+            {isMobile ? null : (
+              <>
+                <div
+                  style={{
+                    borderWidth: 3,
+                    borderColor: "#000",
+                    marginLeft: 10,
+                    padding: 5,
+                    backgroundColor: "#fff",
+                    borderRadius: 10,
+                    fontSize: 16,
+                  }}
+                >
+                  대표 <span style={{ color: "red" }}>84</span> 타입 기준
+                </div>
+                <div style={{ marginLeft: 10, fontSize: 12, color: "gray" }}>
+                  추가 타입들의 시세는 상담을 통해 더 자세히 안내드리겠습니다.
+                </div>
+              </>
+            )}
+          </div>
         </div>
+        {/* </div> */}
         <div
           style={{
             display: "flex",
@@ -333,18 +378,37 @@ export default function SecondSection() {
               className={sans.className}
               style={{
                 display: "flex",
-                flexDirection: "row",
+                alignItems: "center",
+                flexDirection: isMobile ? "column" : "row",
                 paddingBottom: isMobile ? 12 : 30,
                 animation: "blink 2.5s infinite",
               }}
             >
-              <Image
-                src="/images/SK_1.png"
-                alt="카카오채널"
-                width={isMobile ? 40 : 60}
-                height={45}
-              />
-              송도럭스오션 SK뷰
+              {isMobile ? (
+                <div
+                  style={{
+                    borderWidth: 2,
+                    borderColor: "#000",
+                    marginLeft: 10,
+                    padding: 3,
+                    backgroundColor: "#fff",
+                    borderRadius: 10,
+                    fontSize: 14,
+                    marginBottom: 5,
+                  }}
+                >
+                  대표 <span style={{ color: "red" }}>84</span> 타입 기준
+                </div>
+              ) : null}
+              <div style={{ display: "flex" }}>
+                <Image
+                  src="/images/SK_1.png"
+                  alt="카카오채널"
+                  width={isMobile ? 40 : 60}
+                  height={45}
+                />
+                송도럭스오션 SK뷰
+              </div>
             </div>
             <div style={{ fontSize: isMobile ? 12 : 18 }}>
               <div style={{ marginBottom: 10 }}>
@@ -492,18 +556,37 @@ export default function SecondSection() {
               className={sans.className}
               style={{
                 display: "flex",
-                flexDirection: "row",
+                alignItems: "center",
+                flexDirection: isMobile ? "column" : "row",
                 paddingBottom: isMobile ? 12 : 30,
                 animation: "blink 2.5s infinite",
               }}
             >
-              <Image
-                src="/images/Xi_2.png"
-                alt="카카오채널"
-                width={isMobile ? 40 : 60}
-                height={45}
-              />
-              송도자이더스타
+              {isMobile ? (
+                <div
+                  style={{
+                    borderWidth: 2,
+                    borderColor: "#000",
+                    marginLeft: 10,
+                    padding: 3,
+                    backgroundColor: "#fff",
+                    borderRadius: 10,
+                    fontSize: 14,
+                    marginBottom: 5,
+                  }}
+                >
+                  대표 <span style={{ color: "red" }}>84</span> 타입 기준
+                </div>
+              ) : null}
+              <div style={{ display: "flex" }}>
+                <Image
+                  src="/images/Xi_2.png"
+                  alt="카카오채널"
+                  width={isMobile ? 40 : 60}
+                  height={45}
+                />
+                송도자이더스타
+              </div>
             </div>
             <div style={{ fontSize: isMobile ? 12 : 18 }}>
               <div style={{ marginBottom: 10 }}>
@@ -653,18 +736,37 @@ export default function SecondSection() {
               className={sans.className}
               style={{
                 display: "flex",
-                flexDirection: "row",
+                alignItems: "center",
+                flexDirection: isMobile ? "column" : "row",
                 paddingBottom: isMobile ? 12 : 30,
                 animation: "blink 2.5s infinite",
               }}
             >
-              <Image
-                src="/images/Xi_2.png"
-                alt="카카오채널"
-                width={isMobile ? 40 : 60}
-                height={45}
-              />
-              송도크리스탈자이오션
+              {isMobile ? (
+                <div
+                  style={{
+                    borderWidth: 2,
+                    borderColor: "#000",
+                    marginLeft: 10,
+                    padding: 3,
+                    backgroundColor: "#fff",
+                    borderRadius: 10,
+                    fontSize: 14,
+                    marginBottom: 5,
+                  }}
+                >
+                  대표 <span style={{ color: "red" }}>84</span> 타입 기준
+                </div>
+              ) : null}
+              <div style={{ display: "flex" }}>
+                <Image
+                  src="/images/Xi_2.png"
+                  alt="카카오채널"
+                  width={isMobile ? 40 : 60}
+                  height={45}
+                />
+                송도크리스탈자이오션
+              </div>
             </div>
             <div style={{ fontSize: isMobile ? 12 : 18 }}>
               <div style={{ marginBottom: 10 }}>
